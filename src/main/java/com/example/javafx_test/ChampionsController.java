@@ -25,6 +25,8 @@ public class ChampionsController{
     @FXML
     private VBox addChampionView;
 
+
+
     @FXML
     public void connectDatabase(){
         String url = "jdbc:mysql://localhost:3306/leaguechampreport";

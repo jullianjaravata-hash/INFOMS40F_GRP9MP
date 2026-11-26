@@ -21,5 +21,5 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    // "This project is working" - Jullian
+    //This is a comment
 }
