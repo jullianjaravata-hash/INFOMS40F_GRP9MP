@@ -3,6 +3,7 @@ module com.example.javafx_test {
     requires javafx.fxml;
     requires javafx.web;
     requires java.sql;
+    requires com.mysql.cj;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
