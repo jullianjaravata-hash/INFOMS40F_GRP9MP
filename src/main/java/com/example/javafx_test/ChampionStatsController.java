@@ -117,7 +117,7 @@ public class ChampionStatsController {
         // Use the same connection details as the other tabs.
         String url = "jdbc:mysql://localhost:3306/leaguechampreport";
         String user = "root";
-        String password = "YOUR_PASSWORD";
+        String password = "NissanSkylineR34";
 
         try {
             if (conn != null && !conn.isClosed()) {
