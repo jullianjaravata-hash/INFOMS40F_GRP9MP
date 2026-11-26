@@ -26,6 +26,11 @@ public class MainController {
         loadTab("AbilitiesTab.fxml");
     }
 
+    @FXML
+    public void switchToStats(){
+        loadTab("ChampionStatsTab.fxml");
+    }
+
     private void loadTab(String fxmlFile){
         try {
             Parent tab = FXMLLoader.load(getClass().getResource(fxmlFile));
