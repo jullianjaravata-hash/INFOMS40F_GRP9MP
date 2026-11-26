@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="720.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_test.ChampionStatsController">
+   <children>
+      <VBox fx:id="statsMain" prefHeight="441.0" prefWidth="548.0">
+         <children>
+            <Label prefHeight="50.0" prefWidth="320.0" text="Champion Stats">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="recordCount" prefHeight="30.0" prefWidth="250.0" text="N Records">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="80.0" prefWidth="462.0">
+               <children>
+                  <ComboBox fx:id="laneFilter" maxWidth="1.7976931348623157E308" onAction="#filterStats" prefHeight="60.0" prefWidth="200.0" promptText="Filter By Lane">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button mnemonicParsing="false" onAction="#addStats" prefHeight="50.0" prefWidth="150.0" text="Add Stats">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#updateStats" prefHeight="50.0" prefWidth="150.0" text="Update">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deleteStats" prefHeight="50.0" prefWidth="150.0" text="Delete">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="statsTable" prefHeight="450.0" prefWidth="462.0">
+               <columns>
+                  <TableColumn fx:id="colCode" prefWidth="80.0" text="Code" />
+                  <TableColumn fx:id="colChampion" prefWidth="180.0" text="Champion" />
+                  <TableColumn fx:id="colPatch" prefWidth="100.0" text="Patch" />
+                  <TableColumn fx:id="colLane" prefWidth="120.0" text="Lane" />
+                  <TableColumn fx:id="colGames" prefWidth="120.0" text="Games Played" />
+                  <TableColumn fx:id="colWins" prefWidth="100.0" text="Wins" />
+                  <TableColumn fx:id="colBans" prefWidth="100.0" text="Bans" />
+                  <TableColumn fx:id="colWinRate" prefWidth="110.0" text="Win Rate" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox fx:id="statsFormView" prefHeight="200.0" prefWidth="100.0" visible="false">
+         <children>
+            <Label fx:id="formTitle" text="Add Champion Stats">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Label>
+            <Label text="Fill in the fields.">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane prefHeight="300.0" prefWidth="900.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox fillWidth="false" prefHeight="200.0" prefWidth="432.0">
+                     <children>
+                        <Label text="Champion">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="championBox" prefHeight="40.0" prefWidth="350.0" />
+                     </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </VBox>
+                  <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Patch Number">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="patchBox" prefHeight="40.0" prefWidth="350.0" />
+                     </children>
+                  </VBox>
+                  <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Lane">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="laneBox" prefHeight="40.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+                  <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Games Played">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="gamesField" prefHeight="40.0" prefWidth="350.0" />
+                     </children>
+                  </VBox>
+                  <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Wins">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="winsField" prefHeight="40.0" prefWidth="350.0" />
+                     </children>
+                  </VBox>
+                  <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Bans">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="bansField" prefHeight="40.0" prefWidth="350.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" top="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <Label text="Note: bans are per champion per patch, not per lane. Enter a champion's total bans on one lane row only.">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#saveStats" prefHeight="50.0" prefWidth="200.0" text="Save">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#returnMainView" prefHeight="50.0" prefWidth="200.0" text="Back (Cancel)">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</StackPane>
