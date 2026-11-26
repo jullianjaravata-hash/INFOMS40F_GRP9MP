@@ -40,6 +40,14 @@
                         <Font size="20.0" />
                     </font>
                 </Button>
+                <Button mnemonicParsing="false" onAction="#switchToStats" prefHeight="60.0" prefWidth="130.0" text="Stats">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="10.0" top="5.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
             </children>
             <opaqueInsets>
                 <Insets />
