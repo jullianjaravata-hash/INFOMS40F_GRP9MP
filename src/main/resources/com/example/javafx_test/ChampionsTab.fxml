@@ -56,7 +56,7 @@
                         <Insets left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Delete">
+                  <Button mnemonicParsing="false" onAction="#deleteChampion" prefHeight="50.0" prefWidth="150.0" text="Delete">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -98,12 +98,13 @@
                   <Insets left="10.0" />
                </VBox.margin>
             </Label>
-            <GridPane prefHeight="400.0" prefWidth="900.0">
+            <GridPane prefHeight="440.0" prefWidth="1030.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
                <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -117,7 +118,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="350.0" />
+                        <TextField fx:id="championName" prefHeight="40.0" prefWidth="350.0" />
                      </children>
                      <GridPane.margin>
                         <Insets />
@@ -130,7 +131,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="350.0" />
+                        <TextField fx:id="championTitle" prefHeight="40.0" prefWidth="350.0" />
                      </children>
                   </VBox>
                   <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
@@ -140,7 +141,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ComboBox prefHeight="40.0" prefWidth="200.0" />
+                        <ComboBox fx:id="championClass" prefHeight="40.0" prefWidth="200.0" />
                      </children>
                   </VBox>
                   <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -150,7 +151,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="350.0" />
+                        <TextField fx:id="championResource" prefHeight="40.0" prefWidth="350.0" />
                      </children>
                   </VBox>
                   <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
@@ -160,7 +161,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="350.0" />
+                        <TextField fx:id="championHP" prefHeight="40.0" prefWidth="350.0" />
                      </children>
                   </VBox>
                   <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -170,7 +171,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="350.0" />
+                        <TextField fx:id="championRange" prefHeight="40.0" prefWidth="350.0" />
                      </children>
                   </VBox>
                   <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
@@ -180,12 +181,12 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="40.0" prefWidth="350.0" />
+                        <TextField fx:id="championRelease" prefHeight="40.0" prefWidth="350.0" />
                      </children>
                   </VBox>
                   <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Active">
+                        <ToggleButton fx:id="championActive" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Active">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
@@ -205,7 +206,7 @@
             </GridPane>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Save">
+                  <Button mnemonicParsing="false" onAction="#saveChampion" prefHeight="50.0" prefWidth="200.0" text="Save">
                      <font>
                         <Font size="24.0" />
                      </font>

@@ -17,9 +17,8 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainTab.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 750, 450);
-        stage.setTitle("Hello!");
+        stage.setTitle("League of Legends Tracker");
         stage.setScene(scene);
         stage.show();
-        System.out.println("LoL");
     }
 }
